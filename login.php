@@ -11,8 +11,6 @@ if (mysqli_connect_errno()) {
     exit();
 }
  
-// $username = hash_hmac('sha512', $_POST['username'] , 'secret', false);
-// $passward = hash_hmac('sha512', $_POST['passward'] , 'secret', false);
 $username = $_POST['username'];
 $password = $_POST['password'];
 $hashedUsername = hash('sha256', $username);
@@ -39,6 +37,6 @@ $mysqli->close();
  
 ?>
 
-<form action="test.php" method="post">
+<form action="login.php" method="post">
     <input type="submit" name="back" value="ホームに戻る" />
 </form>
