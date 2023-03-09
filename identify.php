@@ -19,7 +19,7 @@ $hashedUsername = hash('sha256', $username);
 $hashedPassword = hash('sha256', $password);
 
 // データを認証する
-$sql = "SELECT * FROM `User` WHERE `username` LIKE '" .$hashedUsername. "' AND `passward` LIKE '" .$hashedPassword. "'";//クエリ
+$sql = "SELECT * FROM `User` WHERE `username` LIKE '" .$hashedUsername. "' AND `password` LIKE '" .$hashedPassword. "'";//クエリ
  
 $result = $mysqli->query($sql);
 //echo $result -> num_rows;

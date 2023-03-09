@@ -8,6 +8,7 @@
 
 <body>
 
+    <!-- 新規登録 -->
     <form action="http://localhost/login.php" method="POST" onsubmit="hashCredentials()">
         <p>新規登録</p>
         <label for="username">Username:</label>
@@ -36,9 +37,9 @@
 
 <script>
     function hashCredentials() { //ハッシュ化
-        var usernameInput = document.getElementById('username');
+        var usernameInput = document.getElementById('username'); 
         var passwordInput = document.getElementById('password');
-        var hashedUsername = sha256(usernameInput.value);
+        var hashedUsername = sha256(usernameInput.value); 
         var hashedPassword = sha256(passwordInput.value);
         usernameInput.value = hashedUsername;
         passwordInput.value = hashedPassword;
