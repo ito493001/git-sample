@@ -7,13 +7,13 @@
 </head>
 
 <body>
-    <form method="post" action="identify.php">
-        <h1>ログイン</h1>
+    <form method="post" action="login.php">
+        <h1>登録</h1>
         <input type="text" placeholder="Username" id="username" name="username">
         <input type="password" placeholder="Password" id="password" name="password">
         <input type="hidden" id="hash_username" name="hash_username">
         <input type="hidden" id="hash_password" name="hash_password">
-        <button type="submit" onclick="hashFields()">Login</button>
+        <button type="submit" onclick="hashFields()">Register</button>
       
         <script>
           async function hashFields() {

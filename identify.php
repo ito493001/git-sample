@@ -1,4 +1,6 @@
 <?php
+
+session_start();
  
 // 接続
 $mysqli = new mysqli('localhost', 'root', 'root', 'User authentication');
@@ -28,10 +30,29 @@ if (!$result -> num_rows) {
     echo '認証に失敗しました。'.mysqli_error();
 }else{
     echo '認証に成功しました';
-    header("location: index.html");
+
+    // パスワードが正しい場合、セッションを開始
+    $_SESSION['authenticated'] = true;
+    $_SESSION['username'] = $username;
+    
+    // 10秒後にセッションを終了するためにタイマーを設定
+    $_SESSION['expire_time'] = time() + 10;
+    
+    // index.htmlにリダイレクト
+    header('Location: index.php');
+    exit();
+}
+
+if(isset($_POST['back'])) {
+    header("location: login.html");
 }
  
 // 切断
 $mysqli->close();
  
 ?>
+
+<form action="login.php" method="post">
+    <input type="submit" name="back" value="ログイン画面に戻る" />
+</form>
+
