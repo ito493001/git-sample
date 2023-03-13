@@ -18,7 +18,7 @@ $hashedPassword = hash('sha256', $password);
 
 
 // データを挿入する
-$sql = "INSERT INTO `User` (`username`, `passward`) VALUES ('" .$hashedUsername. "', '" .$hashedPassword. "');";//クエリ
+$sql = "INSERT INTO `User` (`username`, `password`) VALUES ('" .$hashedUsername. "', '" .$hashedPassword. "');";//クエリ
  
 $result = $mysqli->query($sql);
  
